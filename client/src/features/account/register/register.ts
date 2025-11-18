@@ -1,6 +1,6 @@
-import { Component, inject, input, output } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RegisterCreds, User } from '../../../types/user';
+import { RegisterCreds } from '../../../types/user';
 import { AccountService } from '../../../core/services/account-service';
 
 @Component({
@@ -11,7 +11,6 @@ import { AccountService } from '../../../core/services/account-service';
 })
 export class Register {
   private accountService = inject(AccountService);
-  membersFromHome = input.required<User[]>();
   cancelRegister = output<boolean>();
   protected creds = {} as RegisterCreds;
 
